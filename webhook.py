@@ -32,7 +32,7 @@ def topLogin(data: list) -> None:
         "embeds": [
             {
                 "title": "FGO Daily Bonus - " + main.fate_region,
-                "description": f"Scheluded Login Fate/Grand Order.\n\n{messageBonus}",
+                "description": f"Scheluded Login - Fate/Grand Order.\n\n{messageBonus}",
                 "color": 563455,
                 "fields": [
                     {
@@ -199,7 +199,7 @@ def drawFP(servants, missions) -> None:
         "embeds": [
             {
                 "title": "FGO Daily FP Summon - " + main.fate_region,
-                "description": f"Scheduled Friend Point Fate/Grand Order.\n\n{message_mission}",
+                "description": f"Scheduled Friend Point summon - Fate/Grand Order.\n\n{message_mission}",
                 "color": 5750876,
                 "fields": [
                     {
