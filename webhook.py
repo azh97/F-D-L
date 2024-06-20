@@ -86,7 +86,7 @@ def topLogin(data: list) -> None:
                         "inline": True
                     },
                     {
-                        "name": "Blue Sapling",
+                        "name": "Blue Saplings",
                         "value": f"{rewards.bluebronzesapling}",
                         "inline": True
                     },
@@ -101,7 +101,7 @@ def topLogin(data: list) -> None:
                         "inline": True
                     },
                     {
-                        "name": "Pure Prism",
+                        "name": "Pure Prisms",
                         "value": f"{rewards.pureprism}",
                         "inline": True
                     },
@@ -121,7 +121,7 @@ def topLogin(data: list) -> None:
                         "inline": True
                     },
                     {
-                        "name": "圣杯",
+                        "name": "Holy Grail",
                         "value": f"{rewards.holygrail}",
                         "inline": True
                     },
