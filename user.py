@@ -426,7 +426,7 @@ class user:
     def topHome(self):
         self.Post(f'{fgourl.server_addr_}/home/top?_userId={self.user_id_}')
 
-""" --------------------------------------------------removing auto redeem gift box-----------------------------------------------------------
+# -------------------------------------------------- auto redeem gift box function -----------------------------------------------------------
 
     def lq001(self):
          # https://game.fate-go.jp/present/list?
@@ -435,7 +435,7 @@ class user:
             f'{fgourl.server_addr_}/present/list?_userId={self.user_id_}')
         
         responses = data['response']
-        main.logger.info(f"\n ======================================== \n [+] 读取礼物盒 \n ======================================== " )
+        main.logger.info(f"\n ======================================== \n [+] 读取礼物盒 / Reading gift box contents\n ======================================== " )
 
     def lq002(self):
          # https://game.fate-go.jp/present/receive?
@@ -469,9 +469,9 @@ class user:
     
             responses = data['response']
 
-            main.logger.info(f"\n ======================================== \n [+] 领取成功 \n ======================================== " )
+            main.logger.info(f"\n ======================================== \n [+] 领取成功 / Gift box contains redeemed successfully\n ======================================== " )
 
- --------------------------------------------------removing auto redeem gift box----------------------------------------------------------- """
+# -------------------------------------------------- auto redeem gift box function -----------------------------------------------------------
     
     def lq003(self):
         # https://game.fate-go.jp/shop/purchase?
