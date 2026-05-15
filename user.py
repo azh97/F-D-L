@@ -654,7 +654,7 @@ xCGlz9vV3+AAQ31C2phoyd/QhvpL85p39n6Ibg==
         self.Post(f'{fgourl.server_addr_}/externalPayment/reflect?_userId={self.user_id_}')
 
     
-    def lq001(self):
+    def lq001(self): ## obtain gift box items and details
          # https://game.fate-go.jp/present/list?
           
         data = self.Post(
@@ -667,7 +667,7 @@ xCGlz9vV3+AAQ31C2phoyd/QhvpL85p39n6Ibg==
             
         main.logger.info(f"\n {'=' * 40} \n [+] Reading gift box contents \n {'=' * 40} " )
 
-    def lq002(self):
+    def lq002(self): ## redeem gift box contents
          # https://game.fate-go.jp/present/receive?
         with open('login.json', 'r', encoding='utf-8')as f:
             data = json.load(f)
