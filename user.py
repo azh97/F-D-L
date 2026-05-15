@@ -665,7 +665,7 @@ xCGlz9vV3+AAQ31C2phoyd/QhvpL85p39n6Ibg==
         with open('present.json', 'w', encoding='utf-8') as file:
             json.dump(data, file, ensure_ascii=False, indent=4)
             
-        main.logger.info(f"\n {'=' * 40} \n [+] 获得礼物盒数据 \n {'=' * 40} " )
+        main.logger.info(f"\n {'=' * 40} \n [+] Reading gift box contents \n {'=' * 40} " )
 
     def lq002(self):
          # https://game.fate-go.jp/present/receive?
@@ -699,7 +699,7 @@ xCGlz9vV3+AAQ31C2phoyd/QhvpL85p39n6Ibg==
     
             responses = data['response']
 
-            main.logger.info(f"\n {'=' * 40} \n [+] 领取成功 \n {'=' * 40} " )
+            main.logger.info(f"\n {'=' * 40} \n [+] Gift box items redeemed successfully \n {'=' * 40} " )
 
     def lq003(self):
         # https://game.fate-go.jp/shop/purchase
@@ -739,12 +739,12 @@ xCGlz9vV3+AAQ31C2phoyd/QhvpL85p39n6Ibg==
                 shopId = max_base_shop_id
                 num_ok = max_base_lim_it_Num - num_value
                 if num_ok == 0:
-                   main.logger.info(f"\n {'=' * 40} \n 每月呼符 你已经兑换过了(´･ω･`) \n {'=' * 40} ")
+                   main.logger.info(f"\n {'=' * 40} \n Monthly summoning ticket(s) redeemed (´･ω･`) \n {'=' * 40} ")
                 else:
                     mana = gdata['cache']['replaced']['userGame'][0]['mana']
                     mana_s = mana // max_base_prices
                     if mana_s == 0:
-                       main.logger.info(f"\n {'=' * 40} \n 魔力棱镜不足(´･ω･`) \n {'=' * 40} ")
+                       main.logger.info(f"\n {'=' * 40} \n Insufficient Mana Prism (´･ω･`) \n {'=' * 40} ")
                     else:
                         if num_ok > mana_s:
                            num = mana_s
@@ -757,9 +757,9 @@ xCGlz9vV3+AAQ31C2phoyd/QhvpL85p39n6Ibg==
                 
                         responses = data['response'] 
                         if num is not None:
-                           main.logger.info(f"\n {'=' * 40} \n 已兑换 {num} 呼符 （每月）\n {'=' * 40} ")   
-                           namegift = "呼符（每月）"
-                           name = "呼符"
+                           main.logger.info(f"\n {'=' * 40} \n Redeemed {num} monthly summoning ticket(s) \n {'=' * 40} ")   
+                           namegift = "Monthly summoning ticket"
+                           name = "Summoning ticket"
                            object_id_count = num
                            webhook.Present(name, namegift, object_id_count)
             else:
@@ -767,7 +767,7 @@ xCGlz9vV3+AAQ31C2phoyd/QhvpL85p39n6Ibg==
                 mana = gdata['cache']['replaced']['userGame'][0]['mana']
                 mana_s = mana // max_base_prices
                 if mana_s == 0:
-                   main.logger.info(f"\n {'=' * 40} \n 魔力棱镜不足(´･ω･`) \n {'=' * 40} ")
+                   main.logger.info(f"\n {'=' * 40} \n Insufficient Mana Prism (´･ω･`) \n {'=' * 40} ")
                 else:
                     if num_ok > mana_s:
                        num = mana_s
@@ -779,9 +779,9 @@ xCGlz9vV3+AAQ31C2phoyd/QhvpL85p39n6Ibg==
                         f'{fgourl.server_addr_}/shop/purchase?_userId={self.user_id_}') 
                     
                     if num is not None:
-                        main.logger.info(f"\n {'=' * 40} \n 已兑换 {num} 呼符 （每月） \n {'=' * 40} ")
-                        namegift = "呼符（每月）"
-                        name = "呼符"
+                        main.logger.info(f"\n {'=' * 40} \n Redeemed {num} monthly summoning ticket(s) \n {'=' * 40} ")
+                        namegift = "Monthly summoning ticket"
+                        name = "Summoning ticket"
                         object_id_count = num
                         webhook.Present(name, namegift, object_id_count)
                     
@@ -808,7 +808,7 @@ xCGlz9vV3+AAQ31C2phoyd/QhvpL85p39n6Ibg==
                     if response_time > 1700000000:
                         current_time = response_time
                         if current_time > closedAt:
-                            main.logger.info(f"\n {'=' * 40} \n 目前没有 绿方块活动(´･ω･`) \n {'=' * 40} ")
+                            main.logger.info(f"\n {'=' * 40} \n There are currently no mana prism bonus event (´･ω･`) \n {'=' * 40} ")
                             return
                         else:
                             with open('login.json', 'r', encoding='utf-8') as file:
@@ -823,11 +823,11 @@ xCGlz9vV3+AAQ31C2phoyd/QhvpL85p39n6Ibg==
                             if num_value is not None:
                                num_ok = max_base_lim_it_s_Num - num_value
                                if num_ok == 0:
-                                   main.logger.info(f"\n {'=' * 40} \n {max_base_name_s}呼符 你已经兑换过了(´･ω･`) \n {'=' * 40} ")
+                                   main.logger.info(f"\n {'=' * 40} \n {max_base_name_s} Monthly summoning ticket(s) redeemed (´･ω･`) \n {'=' * 40} ")
                                    return
                                else:
                                     if mana_s == 0:
-                                       main.logger.info(f"\n {'=' * 40} \n 魔力棱镜不足(´･ω･`) \n {'=' * 40} ")
+                                       main.logger.info(f"\n {'=' * 40} \n Insufficient Mana Prism (´･ω･`) \n {'=' * 40} ")
                                     else:
                                         if num_ok > mana_s:
                                            num = mana_s
@@ -838,8 +838,8 @@ xCGlz9vV3+AAQ31C2phoyd/QhvpL85p39n6Ibg==
                                     data = self.Post(
                                         f'{fgourl.server_addr_}/shop/purchase?_userId={self.user_id_}') 
                                     if num is not None:
-                                        main.logger.info(f"\n {'=' * 40} \n 已兑换 {num} 呼符 // {max_base_name_s} \n {'=' * 40} ")
-                                        name = "呼符"
+                                        main.logger.info(f"\n {'=' * 40} \n Redeemed {num} monthly summoning ticket(s) // {max_base_name_s} \n {'=' * 40} ")
+                                        name = "Summoning ticket"
                                         namegift = max_base_name_s
                                         object_id_count = num
                                         webhook.Present(name, namegift, object_id_count)
@@ -849,7 +849,7 @@ xCGlz9vV3+AAQ31C2phoyd/QhvpL85p39n6Ibg==
                                  mana_s = mana // max_base_prices_s
                                 
                                  if mana_s == 0:
-                                    main.logger.info(f"\n {'=' * 40} \n 魔力棱镜不足(´･ω･`) \n {'=' * 40} ")
+                                    main.logger.info(f"\n {'=' * 40} \n Insufficient Mana Prism (´･ω･`) \n {'=' * 40} ")
                                     return
                                  else:
                                      if num_ok > mana_s:
@@ -862,13 +862,13 @@ xCGlz9vV3+AAQ31C2phoyd/QhvpL85p39n6Ibg==
                                      data = self.Post(
                                          f'{fgourl.server_addr_}/shop/purchase?_userId={self.user_id_}') 
                                      if num is not None:
-                                         main.logger.info(f"\n {'=' * 40} \n 已兑换 {num} 呼符 // {max_base_name_s} \n {'=' * 40} ")
+                                         main.logger.info(f"\n {'=' * 40} \n Redeemed {num} monthly summoning ticket(s) // {max_base_name_s} \n {'=' * 40} ")
                                          name = "呼符"
                                          namegift = max_base_name_s
                                          object_id_count = num
                                          webhook.Present(name, namegift, object_id_count)
                     else:
-                        main.logger.info(f"\n {'=' * 40} \n [+] 和游戏服务器时间戳不一致 \n {'=' * 40}")
+                        main.logger.info(f"\n {'=' * 40} \n [+] Inconsistent with game server timestamps \n {'=' * 40}")
 
     
     def Present(self):
