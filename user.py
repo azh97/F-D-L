@@ -701,7 +701,7 @@ xCGlz9vV3+AAQ31C2phoyd/QhvpL85p39n6Ibg==
 
             main.logger.info(f"\n {'=' * 40} \n [+] Gift box items redeemed successfully \n {'=' * 40} " )
 
-    def lq003(self):
+    def lq003(self): #redeem Monthly summoning ticket
         # https://game.fate-go.jp/shop/purchase
         
         url = 'https://raw.githubusercontent.com/DNNDHH/GSubList/Main/Shopdate.json'
@@ -872,7 +872,7 @@ xCGlz9vV3+AAQ31C2phoyd/QhvpL85p39n6Ibg==
 
     
     def Present(self):
-        #素材交換券
+        # Material exchange ticket
         response = requests.get("https://api.atlasacademy.io/export/JP/nice_item.json")
         if response.status_code == 200:
             with open("nice_item.json", 'wb') as f:
@@ -952,7 +952,7 @@ xCGlz9vV3+AAQ31C2phoyd/QhvpL85p39n6Ibg==
                    webhook.Present(name, namegift, object_id_count)
                    
         else:
-            main.logger.info(f"\n {'=' * 40} \n [+] 礼物盒中交換券なし(´･ω･`) \n {'=' * 40} ")
+            main.logger.info(f"\n {'=' * 40} \n [+] No exchange voucher available in the gift box (´･ω･`) \n {'=' * 40} ")
 
 
 
