@@ -49,12 +49,12 @@ def main():
                 instance.topLogin()
                 time.sleep(2)
                 instance.topHome()
-                time.sleep(0.5)
-                instance.lq001()
-                time.sleep(0.5)
-                instance.Present()
-                time.sleep(0.5)
-                instance.lq002()
+                ##time.sleep(0.5)
+                ##instance.lq001() - Giftbox item(s) scan function
+                ##time.sleep(0.5)
+                ##instance.Present() - Material exchange ticket redeem function
+                ##time.sleep(0.5)
+                ##instance.lq002() - Giftbox item(s) redeem function
                 time.sleep(2)
                 instance.buyBlueApple()
                 time.sleep(1)
